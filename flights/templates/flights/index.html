@@ -1,0 +1,20 @@
+{% extends 'flights/base.html' %}
+{% block title %}DocumentTemplate{% endblock %}
+{% block body %}
+    <h1>Hello, There!</h1>
+    <h2>Flights:</h2>
+    <ul>
+        {%for flight in flights%}
+        <li>
+            <a href='{% url 'flight' flight.id %}'>{{flight}}</a>
+        </li>
+        {%endfor%}
+    </ul>
+    <hr>
+    <h2>Airports:</h2>
+    <ul>
+        {%for airport in airports%}
+        <li>{{airport}}</li>
+        {%endfor%}
+    </ul>
+{% endblock %}
